@@ -28,11 +28,11 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 | **2.3.2. Other Authentication Methods** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.2) | ⏳ 번역 중                              |
 | **2.4. Unregistered Clients** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-2.4) | ⏳ 번역 중                              |
 | **3. Protocol Endpoints** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3) | [🔗 번역본](./translated_ko.md#3-프로토콜-엔드포인트) |
-| **3.1. Authorization Endpoint** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1) | [🔗 번역본](./translated_ko.md#31-인가-엔드포인트) |
+| **3.1. Authorization Endpoint** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1) | [🔗 번역본](./translated_ko.md#31-인증-엔드포인트) |
 | **3.1.1. Response Type** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.1) | [🔗 번역본](./translated_ko.md#311-응답-유형) |
 | **3.1.2. Redirection Endpoint** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2) | [🔗 번역본](./translated_ko.md#312-리디렉션-엔드포인트) |
 | **3.2. Token Endpoint** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.2) | [🔗 번역본](./translated_ko.md#32-토큰-엔드포인트) |
-| **3.2.1. Client Authentication** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.2.1) | [🔗 번역본](./translated_ko.md#321-클라이언트-인증) |
+| **3.2.1. Client Authentication** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.2.1) | [🔗 번역본](./translated_ko.md#321-클라이언트-인가) |
 | **3.3. Access Token Scope** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3) | [🔗 번역본](./translated_ko.md#33-액세스-토큰-범위) |
 | **4. Obtaining Authorization** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4) | ⏳ 번역 중                              |
 | **4.1. Authorization Code Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) | ⏳ 번역 중                              |
