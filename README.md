@@ -65,7 +65,7 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 | **8.3. Defining New Authorization Grant Types** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.3) | ⏳ 번역 중                                              |
 | **8.4. Defining New Authorization Endpoint Response Types** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.4) | ⏳ 번역 중                                              |
 | **8.5. Defining Additional Error Codes** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.5) | ⏳ 번역 중                                              |
-| **9. Native Applications** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-9) | ⏳ 번역 중                                              |
+| **9. Native Applications** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-9) | [🔗 번역본](./translated_ko.md#9-네이티브-애플리케이션) |
 | **10. Security Considerations** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10) | ⏳ 번역 중                                              |
 | **10.1. Client Authentication** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10.1) | ⏳ 번역 중                                              |
 | **10.2. Client Impersonation** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10.2) | ⏳ 번역 중                                              |
