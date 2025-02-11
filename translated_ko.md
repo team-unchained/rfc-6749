@@ -615,3 +615,179 @@ scope-token = 1*( %x21 / %x23-5B / %x5D-7E )
 인가 서버는 인가 서버 정책이나 리소스 소유자의 지시에 따라 클라이언트가 요청한 범위를 완전히 또는 부분적으로 무시할 수 있습니다(MAY). 발급된 접근 토큰의 범위가 클라이언트가 요청한 것과 다른 경우, 인가 서버는 실제로 부여된 범위를 클라이언트에 알리기 위해 `scope` 응답 매개변수를 포함해야 합니다(MUST).
 
 클라이언트가 인가를 요청할 때 scope 매개변수를 생략하는 경우, 인가 서버는 미리 정의된 기본값을 사용하여 요청을 처리하거나 유효하지 않은 범위를 나타내는 요청 실패를 해야 합니다(MUST). 인가 서버는 범위 요구사항과 기본값(정의된 경우)을 문서화해야 합니다(SHOULD).
+
+### 4.3 리소스 소유자 비밀번호 자격 증명 승인 방식
+
+이 승인 유형은 리소스 소유자가 클라이언트와 신뢰 관계를 맺고 있는 경우에 적합합니다.
+예를 들어, 클라이언트가 기기 운영체제의 일부이거나 높은 권한을 가진 애플리케이션인 경우가 이에 해당합니다.
+인가 서버는 이 승인 방식을 활성화할 때 특별히 주의해야 하며, 다른 승인 흐름이 사용 가능한 경우에는 사용하지 않아야 합니다 (SHOULD).
+
+이 승인 유형은 리소스 소유자의 자격 증명(일반적으로 대화형 폼을 통해 사용자 이름과 비밀번호)을 얻을 수 있는 클라이언트에 적합하며,
+기존의 HTTP Basic 또는 Digest 인증과 같은 직접 인증 방식을 사용하는 클라이언트를 OAuth로 마이그레이션하기 위해
+저장된 자격 증명을 액세스 토큰으로 변환하는 데에도 사용됩니다.
+
+```mermaid
+flowchart TD
+A[리소스 소유자]
+B[클라이언트]
+C[인가 서버]
+
+A -->|"(A) 비밀번호 자격 증명 제공"| B
+B -->|"(B) 리소스 소유자 비밀번호 자격 증명"| C
+C -->|"(C)액세스 토큰 발급 (옵션: 리프레시 토큰 포함)"| B
+
+```
+
+그림 5: 리소스 소유자 비밀번호 자격 증명 흐름
+
+그림 5에 설명된 흐름은 다음 단계를 포함합니다:
+
+(A) 리소스 소유자는 클라이언트에게 사용자 이름과 비밀번호를 제공합니다.
+
+(B) 클라이언트는 리소스 소유자로부터 받은 자격 증명을 포함하여 인가 서버의 토큰 엔드포인트에 액세스 토큰을 요청합니다. 요청 시 클라이언트는 인가 서버에 인증을 수행합니다.
+
+(C) 인가 서버는 클라이언트를 인증하고 리소스 소유자 자격 증명을 검증하며, 유효한 경우 액세스 토큰을 발급합니다.
+
+### 4.3.1 인가 요청 및 응답
+
+클라이언트가 리소스 소유자 자격 증명을 얻는 방법은 이 명세의 범위를 벗어납니다. 클라이언트는 액세스 토큰을 얻은 후 자격 증명을 폐기해야 합니다(MUST).
+
+### 4.3.2 액세스 토큰 요청
+
+클라이언트는 HTTP 요청 본문에 다음 매개변수를 "application/x-www-form-urlencoded" 형식으로 추가하여 토큰 엔드포인트에 요청을 보냅니다. (UTF-8 문자 인코딩 사용):
+
+- `grant_type`: 필수(REQUIRED). 값은 "password"로 설정해야 합니다.
+- `username`: 필수(REQUIRED). 리소스 소유자의 사용자 이름.
+- `password`: 필수(REQUIRED). 리소스 소유자의 비밀번호.
+- `scope`: 선택적(OPTIONAL). 접근 요청의 범위.
+
+클라이언트 유형이 신뢰할 수 있는 클라이언트이거나 클라이언트 자격 증명이 발급된 경우, 클라이언트는 인가 서버에 인증해야 합니다(MUST).
+
+예시 HTTP 요청:
+
+```http
+POST /token HTTP/1.1
+Host: server.example.com
+Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=johndoe&password=A3ddj3w
+```
+
+인가 서버는 다음을 수행해야 합니다:
+
+- 신뢰할 수 있는 클라이언트 또는 클라이언트 자격 증명이 발급된 모든 클라이언트에 대해 클라이언트 인증 요구(MUST).
+- 클라이언트 인증이 포함된 경우 클라이언트를 인증(MUST).
+- 기존 비밀번호 검증 알고리즘을 사용하여 리소스 소유자 비밀번호 자격 증명을 검증(MUST).
+
+이 액세스 토큰 요청은 리소스 소유자의 비밀번호를 사용하므로, 인가 서버는 무차별 공격으로부터 엔드포인트를 보호해야 합니다(MUST).
+
+### 4.3.3 액세스 토큰 응답
+
+액세스 토큰 요청이 유효하고 인가된 경우, 인가 서버는 액세스 토큰과 선택적 리프레시 토큰을 발급합니다. 요청이 클라이언트 인증에 실패하거나 유효하지 않은 경우, 인가 서버는 오류 응답을 반환합니다.
+
+성공적인 응답 예시:
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+
+{
+  "access_token":"2YotnFZFEjr1zCsicMWpAA",
+  "token_type":"example",
+  "expires_in":3600,
+  "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
+  "example_parameter":"example_value"
+}
+```
+
+### 4.4 클라이언트 자격 증명 승인 방식
+
+클라이언트는 보호된 리소스에 대한 접근을 요청할 때 클라이언트 자격 증명(또는 다른 지원되는 인증 수단)만을 사용하여 액세스 토큰을 요청할 수 있습니다.
+
+클라이언트 자격 증명 승인 방식은 반드시 신뢰할 수 있는 클라이언트에 의해서만 사용되어야 합니다.
+
+```mermaid
+flowchart LR
+A[클라이언트]
+B[인가 서버]
+
+  A-->|"(A) 클라이언트 인증 및 액세스 토큰 요청"|B
+  B-->|"(B) 액세스 토큰 발급"|A
+```
+
+그림 6: 클라이언트 자격 증명 흐름
+
+그림 6에 설명된 흐름은 다음 단계를 포함합니다:
+
+(A) 클라이언트는 인가 서버에 인증하고 토큰 엔드포인트에서 액세스 토큰을 요청합니다.
+
+(B) 인가 서버는 클라이언트를 인증하고, 유효한 경우 액세스 토큰을 발급합니다.
+
+### 4.4.1 인가 요청 및 응답
+
+클라이언트 인증이 인가 승인으로 사용되므로 추가적인 인가 요청은 필요하지 않습니다.
+
+### 4.4.2 액세스 토큰 요청
+
+클라이언트는 HTTP 요청 본문에 다음 매개변수를 "application/x-www-form-urlencoded" 형식으로 추가하여 토큰 엔드포인트에 요청을 보냅니다. (UTF-8 문자 인코딩 사용):
+
+- `grant_type`: 필수(REQUIRED). 값은 "client_credentials"로 설정해야 합니다.
+- `scope`: 선택적(OPTIONAL). 접근 요청의 범위.
+
+클라이언트는 인가 서버에 인증해야 합니다(MUST).
+
+예시 HTTP 요청:
+
+```http
+POST /token HTTP/1.1
+Host: server.example.com
+Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+```
+
+인가 서버는 클라이언트를 인증해야 합니다(MUST).
+
+### 4.4.3 액세스 토큰 응답
+
+액세스 토큰 요청이 유효하고 인가된 경우, 인가 서버는 액세스 토큰을 발급합니다. 리프레시 토큰은 포함되지 않아야 합니다(SHOULD NOT). 요청이 클라이언트 인증에 실패하거나 유효하지 않은 경우, 인가 서버는 오류 응답을 반환합니다.
+
+성공적인 응답 예시:
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+
+{
+  "access_token":"2YotnFZFEjr1zCsicMWpAA",
+  "token_type":"example",
+  "expires_in":3600,
+  "example_parameter":"example_value"
+}
+```
+
+### 4.5 확장 승인
+
+클라이언트는 토큰 엔드포인트의 "grant_type" 매개변수 값으로 절대 URI(인가 서버에 의해 정의됨)를 지정하고 필요한 추가 매개변수를 추가하여 확장 승인 유형을 사용합니다.
+
+예를 들어, [OAuth-SAML2]에 의해 정의된 SAML 2.0 어설션 승인 유형을 사용하여 액세스 토큰을 요청하려면, 클라이언트는 다음과 같은 HTTP 요청을 TLS를 사용하여 보낼 수 있습니다:
+
+```http
+POST /token HTTP/1.1
+Host: server.example.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Asaml2-bearer&assertion=PEFzc2VydGlvbiBJc3N1ZUluc3RhbnQ9IjIwMTEtMDU[...생략...]aG5TdGF0ZW1lbnQ-PC9Bc3NlcnRpb24-
+
+```
+
+액세스 토큰 요청이 유효하고 승인된 경우,
+인가 서버는 [5.1.](#51-성공-응답)에 설명된 대로 액세스 토큰과 선택적 리프레시
+토큰을 발급합니다. 요청이 클라이언트 인증에 실패하거나 유효하지 않은 경우,
+인가 서버는 [5.2.](#52-오류-응답)에 설명된 대로 오류 응답을 반환합니다.
