@@ -1,6 +1,6 @@
 # RFC 6749 한국어 번역 문서
 
-이 저장소는 OAuth 2.0 Authorization Framework를 정의하는 **RFC 6749** 문서를 한국어로 번역하는 프로젝트입니다.  
+이 저장소는 OAuth 2.0 Authorization Framework를 정의하는 **RFC 6749** 문서를 한국어로 번역하는 프로젝트입니다.
 OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본 문서의 정확한 번역을 통해 한국어 사용자가 쉽게 접근할 수 있도록 돕는 것을 목표로 합니다.
 
 ## 📖 번역 진행 현황
@@ -43,15 +43,15 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 | **4.2. Implicit Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) | ⏳ 번역 중                                              |
 | **4.2.1. Authorization Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.1) | ⏳ 번역 중                                              |
 | **4.2.2. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2) | ⏳ 번역 중                                              |
-| **4.3. Resource Owner Password Credentials Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3) | ⏳ 번역 중                                              |
-| **4.3.1. Authorization Request and Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.1) | ⏳ 번역 중                                              |
-| **4.3.2. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.2) | ⏳ 번역 중                                              |
-| **4.3.3. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.3) | ⏳ 번역 중                                              |
-| **4.4. Client Credentials Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) | ⏳ 번역 중                                              |
-| **4.4.1. Authorization Request and Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.1) | ⏳ 번역 중                                              |
-| **4.4.2. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.2) | ⏳ 번역 중                                              |
-| **4.4.3. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.3) | ⏳ 번역 중                                              |
-| **4.5. Extension Grants** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.5) | ⏳ 번역 중                                              |
+| **4.3. Resource Owner Password Credentials Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3) | [🔗 번역본](./translated_ko.md#43-리소스-소유자-비밀번호-자격-증명-승인) |
+| **4.3.1. Authorization Request and Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.1) | [🔗 번역본](./translated_ko.md#431-인가-요청-및-응답) |
+| **4.3.2. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.2) | [🔗 번역본](./translated_ko.md#432-액세스-토큰-요청) |
+| **4.3.3. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.3) | [🔗 번역본](./translated_ko.md#433-액세스-토큰-응답) |
+| **4.4. Client Credentials Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) | [🔗 번역본](./translated_ko.md#44-클라이언트-자격-증명-승인) |
+| **4.4.1. Authorization Request and Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.1) | [🔗 번역본](./translated_ko.md#441-인가-요청-및-응답) |
+| **4.4.2. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.2) | [🔗 번역본](./translated_ko.md#442-액세스-토큰-요청) |
+| **4.4.3. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4.3) | [🔗 번역본](./translated_ko.md#443-액세스-토큰-응답) |
+| **4.5. Extension Grants** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.5) | [🔗 번역본](./translated_ko.md#45-확장-승인) |
 | **5. Issuing an Access Token** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-5) | ⏳ 번역 중                                              |
 | **5.1. Successful Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-5.1) | ⏳ 번역 중                                              |
 | **5.2. Error Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-5.2) | ⏳ 번역 중                                              |
@@ -65,7 +65,7 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 | **8.3. Defining New Authorization Grant Types** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.3) | ⏳ 번역 중                                              |
 | **8.4. Defining New Authorization Endpoint Response Types** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.4) | ⏳ 번역 중                                              |
 | **8.5. Defining Additional Error Codes** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-8.5) | ⏳ 번역 중                                              |
-| **9. Native Applications** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-9) | ⏳ 번역 중                                              |
+| **9. Native Applications** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-9) | [🔗 번역본](./translated_ko.md#9-네이티브-애플리케이션) |
 | **10. Security Considerations** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10) | ⏳ 번역 중                                              |
 | **10.1. Client Authentication** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10.1) | ⏳ 번역 중                                              |
 | **10.2. Client Impersonation** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-10.2) | ⏳ 번역 중                                              |
@@ -108,7 +108,7 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 - **[@Carrole](https://github.com/Carrole)**
 
 ## 📜 라이선스
-본 번역문은 [MIT 라이선스](./LICENSE)를 따릅니다.  
+본 번역문은 [MIT 라이선스](./LICENSE)를 따릅니다.
 RFC 원문은 IETF의 정책에 따라 공개된 문서이며, 본 번역 프로젝트는 비공식 번역을 제공하는 것입니다.
 
 ---
