@@ -34,15 +34,15 @@ OAuth 2.0은 웹, 모바일, API 인증을 위한 표준 프로토콜이며, 본
 | **3.2. Token Endpoint** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.2) | [🔗 번역본](./translated_ko.md#32-토큰-엔드포인트)              |
 | **3.2.1. Client Authentication** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.2.1) | [🔗 번역본](./translated_ko.md#321-클라이언트-인증)             |
 | **3.3. Access Token Scope** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3) | [🔗 번역본](./translated_ko.md#33-액세스-토큰-범위)             |
-| **4. Obtaining Authorization** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4) | ⏳ 번역 중                                                |
-| **4.1. Authorization Code Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) | ⏳ 번역 중                                                |
-| **4.1.1. Authorization Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1) | ⏳ 번역 중                                                |
-| **4.1.2. Authorization Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2) | ⏳ 번역 중                                                |
-| **4.1.3. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3) | ⏳ 번역 중                                                |
-| **4.1.4. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.4) | ⏳ 번역 중                                                |
-| **4.2. Implicit Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) | ⏳ 번역 중                                                |
-| **4.2.1. Authorization Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.1) | ⏳ 번역 중                                                |
-| **4.2.2. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2) | ⏳ 번역 중                                                |
+| **4. Obtaining Authorization** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4) | [🔗 번역본](./translated_ko.md#4-인가-승인-받기)                     |
+| **4.1. Authorization Code Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) | [🔗 번역본](./translated_ko.md#41-인가-코드-승인)                  |
+| **4.1.1. Authorization Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1) | [🔗 번역본](./translated_ko.md#411-인가-요청)                 |
+| **4.1.2. Authorization Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2) | [🔗 번역본](./translated_ko.md#412-인가-응답)                  |
+| **4.1.3. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3) |[🔗 번역본](./translated_ko.md#413-액세스-토큰-요청)             |
+| **4.1.4. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.4) | [🔗 번역본](./translated_ko.md#414-액세스-토큰-응답)                       |
+| **4.2. Implicit Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) | [🔗 번역본](./translated_ko.md#42-암묵적-승인)        |
+| **4.2.1. Authorization Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.1) | [🔗 번역본](./translated_ko.md#421-인가-요청)              |
+| **4.2.2. Access Token Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2) | [🔗 번역본](./translated_ko.md##422-액세스-토큰-응답)         |
 | **4.3. Resource Owner Password Credentials Grant** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3) | [🔗 번역본](./translated_ko.md#43-리소스-소유자-비밀번호-자격-증명-승인) |
 | **4.3.1. Authorization Request and Response** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.1) | [🔗 번역본](./translated_ko.md#431-인가-요청-및-응답) |
 | **4.3.2. Access Token Request** | [🔗 원문](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3.2) | [🔗 번역본](./translated_ko.md#432-액세스-토큰-요청) |
